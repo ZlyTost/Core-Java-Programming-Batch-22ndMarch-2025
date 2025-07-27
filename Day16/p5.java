@@ -1,10 +1,25 @@
 package Day16;
+//Example of Code Refactoring with Encapsulation
+//Before Refactoring:
+public class p5{
+	 public String accountNumber;
+	    public double balance;
 
-public class p5 {
+	    public void deposit(double amount) {
+	        balance += amount;
+	    }
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	    public void withdraw(double amount) {
+	        if (amount <= balance) {
+	            balance -= amount;
+	        } else {
+	            System.out.println("Insufficient funds.");
+	        }
+	    }
 	}
+/*
+Issues:
 
-}
+1. The attributes are public, allowing direct access and modification.
+2. There is no validation for the accountNumber.
+*/
